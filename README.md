@@ -1,5 +1,5 @@
 # CCTV Lens Calculator written in COBOL
-Some people have "Hello World"! But i have the CCTV Lens Calculator :smile:
+Some people have ["Hello World"](https://github.com/search?q=hello+world)! But i have the [CCTV Lens Calculator](https://github.com/search?q=cctv+lens+calculator) :smile:
 
 ## CCTV Lens Calculator
 
