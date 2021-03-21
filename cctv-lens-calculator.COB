@@ -150,6 +150,7 @@
         COMPUTE RESULT = DISTANCE * GETVAL / WIDTH
         DISPLAY 'Use a ' RESULT 'mm lens.'
        END-IF.
+
        IF CALC IS EQUAL TO 2 THEN
         IF CALC2 IS EQUAL TO 1
          MOVE WS-HOOGTE-1 TO GETVAL
