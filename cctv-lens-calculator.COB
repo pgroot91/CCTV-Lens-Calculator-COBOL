@@ -176,18 +176,15 @@
        END-IF.
 
        DISPLAY ' '.
-
        DISPLAY 'DISCLAIMER: Reasonable efforts are made to ensure that'
        DISPLAY 'the information provided by this CCTV Lens Calculator'
        DISPLAY 'is accurate, however, no guarantees for accuracy of'
        DISPLAY 'information are made. Information is provided "as is",'
        DISPLAY 'without warranty of any kind, whether expressed or'
        DISPLAY 'implied.'.
-
        DISPLAY ' '.
 
        DISPLAY 'Type "exit" to close the program.'.
-
        ACCEPT S.
 
        DISPLAY ' '.
