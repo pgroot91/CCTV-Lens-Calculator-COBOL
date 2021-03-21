@@ -173,7 +173,6 @@
         DISPLAY ' '
         COMPUTE RESULT = DISTANCE * GETVAL / HEIGHT
         DISPLAY 'Use a ' RESULT 'mm lens.'
-
        END-IF.
 
        DISPLAY ' '.
