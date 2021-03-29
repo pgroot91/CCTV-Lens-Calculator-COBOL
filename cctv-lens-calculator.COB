@@ -13,12 +13,16 @@
 
        WORKING-STORAGE SECTION.
        01 CALC PIC 9(1).
+        88 CALC-VALID VALUES ARE 1 THRU 2.
        01 CALC2 PIC 9(1).
-       01 DISTANCE PIC 9(2).
+        88 CALC2-VALID VALUES ARE 1 THRU 5.
+       01 DISTANCE PIC 9(3).
+        88 DISTANCE-VALID VALUES ARE 1 THRU 999.
+        88 DISTANCE-INVALID VALUES ARE 'A' THRU 'Z'.
        01 WIDTH PIC 9(2).
        01 HEIGHT PIC 9(2).
-       01 RESULT PIC 9(2).
-       01 GETVAL PIC 9(1)V9.
+       01 RESULT PIC 9(3).
+       01 GETVAL PIC 9(2)V999.
        01 WS-SENSORBREEDTES.
         05 WS-BREEDTE-1 PIC 9(2)V9 VALUE 12.8.
         05 WS-BREEDTE-2 PIC 9(1)V9 VALUE 8.8.
@@ -54,12 +58,15 @@
        DISPLAY 'Enter number: ' WITH NO ADVANCING.
        ACCEPT CALC.
        DISPLAY ' '.
-       IF CALC = 1 OR 2 GO STEP1.
-       IF CALC NOT = 1 OR 2
+
+       IF CALC-VALID
+           GO STEP1
+       ELSE
            DISPLAY 'ERROR: Please enter a valid number.'
            DISPLAY ' '
-           GO SELECT-CALCULATOR.
-           STOP RUN.
+           GO SELECT-CALCULATOR
+           STOP RUN
+       END-IF.
 
        STEP1.
 
@@ -79,12 +86,15 @@
        DISPLAY 'Enter number: ' WITH NO ADVANCING.
        ACCEPT CALC2.
        DISPLAY ' '.
-       IF CALC2 = 1 OR 2 OR 3 OR 4 OR 5 GO STEP2.
-       IF CALC2 NOT = 1 OR 2 OR 3 OR 4 OR 5
+
+       IF CALC2-VALID
+           GO STEP2
+       ELSE
            DISPLAY 'ERROR: Please enter a valid number.'
            DISPLAY ' '
            GO VALUE-STEP1
-           STOP RUN.
+           STOP RUN
+       END-IF.
 
        STEP2.
 
@@ -93,11 +103,24 @@
        DISPLAY '******************************************************'.
        DISPLAY '*** IMPORTANT: Use whole meters only *****************'.
        DISPLAY '******************************************************'.
-
        DISPLAY ' '.
+
+       VALUE-STEP2.
+
        DISPLAY 'Enter distance: ' WITH NO ADVANCING.
        ACCEPT DISTANCE.
        DISPLAY ' '.
+
+       IF DISTANCE-VALID IS NUMERIC
+           GO STEP3
+       ELSE
+           DISPLAY 'ERROR: Please enter a valid number.'
+           DISPLAY ' '
+           GO VALUE-STEP2
+           STOP RUN
+       END-IF.
+
+       STEP3.
 
        IF CALC = 1 THEN
 
