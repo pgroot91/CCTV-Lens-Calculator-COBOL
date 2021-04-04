@@ -111,7 +111,7 @@
        ACCEPT DISTANCE.
        DISPLAY ' '.
 
-       IF DISTANCE-VALID IS NUMERIC
+       IF DISTANCE-VALID
            GO STEP3
        ELSE
            DISPLAY 'ERROR: Please enter a valid number.'
